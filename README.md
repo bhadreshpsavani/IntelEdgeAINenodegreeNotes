@@ -122,4 +122,4 @@ Knowledge Distillation is simple, but recent works have shown that it can be a v
 
 Note that the aim of the authors was actually not to compress a model, but to improve accuracy. The reduction in parameters came from using the EfficientNet architecture.
 
-Knowledge distillation can also be combined with quantization as shown in [Model compression via distillation and quantization and with pruning](https://arxiv.org/abs/1802.05668) as shown in Faster gaze prediction with dense networks and Fisher pruning](https://arxiv.org/abs/1801.05787).
+Knowledge distillation can also be combined with quantization as shown in [Model compression via distillation and quantization and with pruning](https://arxiv.org/abs/1802.05668) as shown in [Faster gaze prediction with dense networks and Fisher pruning](https://arxiv.org/abs/1801.05787).
