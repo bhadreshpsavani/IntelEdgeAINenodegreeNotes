@@ -43,3 +43,33 @@ High performance, low latency. Once programmed with a suitable bitstream, FPGAs 
 * Large Networks: One feature of FPGAs that makes them especially useful in deep learning is that they can support large networks, with a capacity to handle networks that have more than 2 million parameters.
 * Robust: FPGAs are designed to have 100% on-time performance, meaning they can be continuously running 24 hours a day, 7 days a week, 365 days a year. They are also able to function over a wide range of temperatures, from **0° C to 60° C**. This means that FPGAs can be deployed in harsh environments like factory floors and still perform optimally.
 * Long Lifespan: FPGAs have a **long lifespan**. For example, FPGAs that use devices from Intel’s Internet of Things Group have a guaranteed availability of 10 years, from start of production.
+
+
+## Reducing Model Size:
+
+we'll be covering different techniques for benchmarking model size and reducing model size. Here are the main topics we'll discuss:
+
+* Quantization
+* DL Workbench
+    - Benchmark Models
+    - Quantize Models
+* Weight Sharing
+    - Zip a model
+* Knowledge Distillation
+
+### Quantization: 
+
+In this lesson, we will be learning about one of the most widely used and researched techniques for reducing model size: quantization.
+
+```
+Broadly speaking, quantization is the process of mapping values from a larger set to a smaller one. In quantization, we might start off with a continuous (and perhaps infinite) number of possible values, and map these to a smaller (finite) set of values. In other words, quantization is the process of reducing large numbers of continuous values down into a limited number of discrete quantities.
+```
+
+In the present context, we can use quantization to map very large numbers of high-precision weight values to a lower number of lower-precision weight values—thus reducing the size of the model by reducing the number of bits we use to store each weight.
+
+TYPE OF NEURAL NETWORK:
+1. INT8 Quantized Nerual network
+2. Binary Neural Network
+3. Ternary Neural Network
+
+(XNOR-Net: ImageNet Classification Using Binary Convolutional Neural Networks (Rastegari et al., 2016))[https://video.udacity-data.com/topher/2020/March/5e6e8859_xnor-net-imagenet-classification-using-binary-convolutional-neural-networks/xnor-net-imagenet-classification-using-binary-convolutional-neural-networks.pdf]
