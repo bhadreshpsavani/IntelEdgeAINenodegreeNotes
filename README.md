@@ -106,3 +106,20 @@ In weight sharing, the goal is for multiple weights to share the same value. Thi
 * [Deep Compression: Compressing Deep Neural Networks with Pruning, Trained Quantization and Huffman Coding (Han et al., 2016)](https://video.udacity-data.com/topher/2020/March/5e6e9c50_deep-compression-compressing-deep-neural-networks-with-pruning-trained-quantization-and-huffman-coding/deep-compression-compressing-deep-neural-networks-with-pruning-trained-quantization-and-huffman-coding.pdf)
 
 * [Compressing Neural Networks with the Hashing Trick (Chen et al, 2015)](https://video.udacity-data.com/topher/2020/March/5e6e9c9f_compressing-neural-networks-with-the-hashing-trick/compressing-neural-networks-with-the-hashing-trick.pdf)
+
+### Knowledge Distillation:
+Knowledge distillation is a relatively newer technique to perform model compression.
+
+Knowledge distillation is a method where we try to transfer the knowledge learned by a large, accurate model (the teacher model) to a smaller and computationally less expensive model (the student model).
+
+Through knowledge distillation, the student model can achieve nearly the same accuracies as the teacher model by mimicking the internal representation learned by the teacher.
+
+The generalised knowledge distillation technique we learned was introduce in a paper called [Distilling the Knowledge in a Neural Network](https://arxiv.org/abs/1503.02531) and was written by Geoffrey Hinton, Oriol Vinyals and Jeff Dean.
+
+Knowledge Distillation is simple, but recent works have shown that it can be a very powerful method of learning. In a recent paper, researchers showed that by making some small changes to the knowledge distillation algorithm, they could improve the Top-1% Accuracy on ImageNet by 2% over the state of the art while using a model with 349M fewer parameters! If you're curious, you can check out the full paper here:
+
+* [Self-training with Noisy Student improves ImageNet classification (Xie et al., 2020)](https://video.udacity-data.com/topher/2020/March/5e6ea044_self-training-with-noisy-student-improves-imagenet-classification/self-training-with-noisy-student-improves-imagenet-classification.pdf)
+
+Note that the aim of the authors was actually not to compress a model, but to improve accuracy. The reduction in parameters came from using the EfficientNet architecture.
+
+Knowledge distillation can also be combined with quantization as shown in [Model compression via distillation and quantization and with pruning](https://arxiv.org/abs/1802.05668) as shown in Faster gaze prediction with dense networks and Fisher pruning](https://arxiv.org/abs/1801.05787).
