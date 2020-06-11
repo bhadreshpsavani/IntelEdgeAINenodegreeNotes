@@ -74,11 +74,35 @@ TYPE OF NEURAL NETWORK:
 
 [XNOR-Net: ImageNet Classification Using Binary Convolutional Neural Networks (Rastegari et al., 2016)](https://video.udacity-data.com/topher/2020/March/5e6e8859_xnor-net-imagenet-classification-using-binary-convolutional-neural-networks/xnor-net-imagenet-classification-using-binary-convolutional-neural-networks.pdf)
 
-DL Workbench can help us get accurate performance metrics about our model. But there are a few points that you should keep in mind when interpreting the results you get:
-
-DL Workbench: 
+### DL Workbench: 
 DL Workbench can help us get accurate performance metrics about our model. But there are a few points that you should keep in mind when interpreting the results you get:
 
 1. **DL Workbench only gives performance results of your model and not your application code.** There might be bottlenecks in your application code that could cause your system to perform poorly. 
 2. **DL Workbench gives you performance results only for the hardware you select.** You might get different results for different hardware.
 3. **Even though the model might give you the best performance at a certain value of batches and streams for a given hardware, your scenario may not generate data fast enough to fulfill those batch and stream requirements.** In a situation like this, your model will have to wait for data, which might offset the performance gains of batching and streaming. You should therefore select the batch and stream sizes that takes into account not only the throughput and latency, but also how data is generated in your application.
+
+### How Quantization is Done?:
+
+Let's get into some concrete examples of quantization, so that you can get an idea of how it is done. Remember, quantization simply refers to a mapping that reduces a larger number of values to a smaller number of values—so it can potentially be done in many different ways.
+
+That said, the simplest form of quantization is weight quantization, in which we reduce the amount of space required for the weight values—such as by reducing our weight values from 32 bits to 8 bits.
+
+* [A Survey on Methods and Theories of Quantized Neural Networks](https://arxiv.org/pdf/1808.04752.pdf) by Yunhui Guo, in which the author goes over some of these techniques.
+
+* OpenVINO uses MKL-DNN, a math kernel library, to quantize their neural networks. You can find information about their quantization workflow [here](https://intel.github.io/mkl-dnn/ex_int8_simplenet.html).
+
+### Model Compression:
+One important—but often forgotten—metric that we should optimize is memory. We can do this using model compression.
+
+Model compression refers to a group of algorithms that help us reduce the amount of memory needed to store our model, and also make our models more compact (in terms of the number of parameters).
+
+In fact, you have already learned about a model-compression algorithm, quantization, where we reduce the number of bits required to represent each weight.
+
+### Weight Sharing:
+Another way to compress our model is to reduce the number of weights that we store. This is known as weight sharing.
+
+In weight sharing, the goal is for multiple weights to share the same value. This reduces the number of unique weights that need to be stored, thus saving memory and reducing model size.
+
+* [Deep Compression: Compressing Deep Neural Networks with Pruning, Trained Quantization and Huffman Coding (Han et al., 2016)](https://video.udacity-data.com/topher/2020/March/5e6e9c50_deep-compression-compressing-deep-neural-networks-with-pruning-trained-quantization-and-huffman-coding/deep-compression-compressing-deep-neural-networks-with-pruning-trained-quantization-and-huffman-coding.pdf)
+
+* [Compressing Neural Networks with the Hashing Trick (Chen et al, 2015)](https://video.udacity-data.com/topher/2020/March/5e6e9c9f_compressing-neural-networks-with-the-hashing-trick/compressing-neural-networks-with-the-hashing-trick.pdf)
